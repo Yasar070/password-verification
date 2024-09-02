@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Verification</title>
+</head>
+<body>
+    <style>
+        #container{
+            
+            border: 2px black solid;
+            width: fit-content;
+            padding: 10px;
+            margin: 10px;
+            margin-left: 400px;
+            display: flex;
+            background-color:burlywood;
+
+        }
+        .nameInp{
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border: ;
+        }
+        .passwordInp{
+            margin: 10px;
+            padding: 10px;
+            margin-right: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .repasswordInp{
+            margin: 10px;
+            padding: 10px;
+            margin-right: 80px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .submitdiv{
+            margin-top: 10px;
+            text-align: center;
+        }
+        .nameError{
+            margin-top: 30px;
+        }
+        #namebox:focus{
+            outline: none;
+        }
+        #passwordbox:focus{
+            outline: none;
+        }
+        #repasswordbox:focus{
+            outline: none;
+        }
+   
+   
+       @media screen and (max-width:580px) {
+        body{
+          
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #container{
+            margin-left: auto;
+            
+        }
+        
+       }
+    </style>
+    <div id="container">
+    <form>
+       
+      
+        <div class="nameInp">
+            <h1>Password Verification</h1>
+            Name :<input id="namebox" type="text" placeholder="username"><br>
+            <span id="nameError" style="color: blueviolet;">Enter valid name</span>
+        
+        </div>
+        
+      
+      <div  class="passwordInp">
+        Password :<input id="passwordbox" type="password" placeholder="password"><br>
+        <span id="passwordError" style="color: blueviolet;">Passoword must be greater than 6 characters</span>
+       
+      </div>
+     
+     <div  class="repasswordInp">
+        Re-type password :<input id="repasswordbox" type="password" placeholder="re-type password"><br>
+        <span id="repasswordError" style="color: blueviolet;">Re-type password</span>
+     </div>
+    
+      <div class="submitdiv">
+        <input id="btn" type="submit">
+
+      </div>
+       
+    </form>
+    </div>
+   <script >
+var namebox=document.getElementById("namebox")
+var passwordbox=document.getElementById("passwordbox")
+var repasswordbox=document.getElementById("repasswordbox")
+var nameError= document.getElementById("nameError")
+var passwordError=document.getElementById("passwordError")
+var repasswordError=document.getElementById("repasswordError")
+var btn=document.getElementById("btn")
+
+
+btn.addEventListener("click",function(){
+    event.preventDefault()
+    var nameboxRegExp=/^\[a-zA-Z]+$/
+    var passwordRegExp=/^\[a-zA-Z,0-9]+$/
+    var repasswordRegExp=/^\[a-zA-z,0-9]+$/
+
+
+
+
+    if(nameboxRegExp.test(namebox.value==false))
+{
+    document.getElementById("nameError").style.display="inline"
+}
+else{
+    document.getElementById("nameError").style.display="none"
+}
+
+
+if(passwordRegExp.test(passwordbox.value==false))
+{
+    document.getElementById("passwordError").style.display="inline"
+}
+else{
+    document.getElementById("passwordError").style.display="none"
+}
+
+
+if(repasswordRegExp.test(repasswordbox.value==false))
+{
+    document.getElementById("repasswordError").style.display="inline"
+}
+else{
+    document.getElementById("repasswordError").style.display="none"
+}
+})
+    
+
+ 
+
+   </script>
+</body>
+</html>
+
